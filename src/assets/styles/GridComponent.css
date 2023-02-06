@@ -1,0 +1,232 @@
+.vue-grid-content-grid[data-layout="standard"] {
+    display: grid;
+    gap: var(--vue-grid-gap);
+    grid-template-columns: repeat(var(--vue-grid-auto-fit-fill), minmax(
+        min(
+            100% / var(--vue-grid-min-columns) - (var(--vue-grid-gap)*calc(var(--vue-grid-min-columns) - 1)/var(--vue-grid-min-columns))
+            , 
+            max(
+                var(--vue-grid-min-column-width)
+                , 
+                100% / var(--vue-grid-max-columns) - (var(--vue-grid-gap)*calc(var(--vue-grid-max-columns) - 1)/var(--vue-grid-max-columns))
+            )
+        )
+        , 
+        1fr
+    ));
+}
+  
+.vue-grid-content-grid[data-layout="standard"] .vue-grid-content-item {
+    background-color: var(--vue-grid-background-color);
+    border-radius: var(--vue-grid-border-radius);
+    position: relative;
+    overflow: hidden;
+}
+  
+.vue-grid-content-grid[data-layout="standard"] .vue-grid-content-item::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    padding-bottom: calc(var(--vue-grid-aspect-ratio) * 100%);
+}
+
+.vue-grid-content-grid[data-layout="standard"] .vue-grid-content-item img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.vue-grid-content-grid[data-layout="standard"] .vue-grid-content-item .vue-grid-hover-template {
+    display: none;
+}
+
+.vue-grid-content-grid[data-layout="standard"] .vue-grid-content-item:hover .vue-grid-hover-template {
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--vue-grid-hover-background-color);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.vue-grid-content-grid[data-layout="standard"] .vue-grid-content-item:hover .vue-grid-hover-template p {
+    display: block;
+    color: var(--vue-grid-hover-text-color);
+    font-size: var(--vue-grid-hover-text-font-size);
+}
+
+.vue-grid-content-grid[data-layout="standard"] .vue-grid-content-item:hover .vue-grid-hover-template .vue-grid-hover-button-list {
+    display: block;
+}
+
+
+
+
+
+
+
+.vue-grid-content-grid[data-layout="free-height"] {
+    display: grid;
+    gap: var(--vue-grid-gap);
+    grid-template-columns: repeat(var(--vue-grid-auto-fit-fill), minmax(
+        min(
+            100% / var(--vue-grid-min-columns) - (var(--vue-grid-gap)*calc(var(--vue-grid-min-columns) - 1)/var(--vue-grid-min-columns))
+            , 
+            max(
+                var(--vue-grid-min-column-width)
+                , 
+                100% / var(--vue-grid-max-columns) - (var(--vue-grid-gap)*calc(var(--vue-grid-max-columns) - 1)/var(--vue-grid-max-columns))
+            )
+        )
+        , 
+        1fr
+    ));
+    grid-auto-rows: var(--vue-grid-fr);
+}
+  
+.vue-grid-content-grid[data-layout="free-height"] .vue-grid-content-item {
+    background-color: var(--vue-grid-background-color);
+    border-radius: var(--vue-grid-border-radius);
+    position: relative;
+    overflow: hidden;
+}
+  
+.vue-grid-content-grid[data-layout="free-height"] .vue-grid-content-item::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    padding-bottom: calc(var(--vue-grid-aspect-ratio) * 100%);
+}
+
+.vue-grid-content-grid[data-layout="free-height"] .vue-grid-content-item img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.vue-grid-content-grid[data-layout="free-height"] .vue-grid-content-item .vue-grid-hover-template {
+    display: none;
+}
+
+.vue-grid-content-grid[data-layout="free-height"] .vue-grid-content-item:hover .vue-grid-hover-template {
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--vue-grid-hover-background-color);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.vue-grid-content-grid[data-layout="free-height"] .vue-grid-content-item:hover .vue-grid-hover-template p {
+    display: block;
+    color: var(--vue-grid-hover-text-color);
+    font-size: var(--vue-grid-hover-text-font-size);
+}
+
+.vue-grid-content-grid[data-layout="free-height"] .vue-grid-content-item:hover .vue-grid-hover-template .vue-grid-hover-button-list {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+  
+.vue-grid-content-grid[data-layout="all-free"] {
+    display: grid;
+    gap: var(--vue-grid-gap);
+    grid-template-columns: repeat(var(--vue-grid-auto-fit-fill), minmax(
+        min(
+            100% / var(--vue-grid-min-columns) - (var(--vue-grid-gap)*calc(var(--vue-grid-min-columns) - 1)/var(--vue-grid-min-columns))
+            , 
+            max(
+                var(--vue-grid-min-column-width)
+                , 
+                100% / var(--vue-grid-max-columns) - (var(--vue-grid-gap)*calc(var(--vue-grid-max-columns) - 1)/var(--vue-grid-max-columns))
+            )
+        )
+        , 
+        1fr
+    ));
+    grid-auto-rows: var(--vue-grid-fr);
+    grid-auto-flow: dense;
+    align-items: self-start;
+}
+  
+.vue-grid-content-grid[data-layout="all-free"] .vue-grid-content-item {
+    background-color: var(--vue-grid-background-color);
+    border-radius: var(--vue-grid-border-radius);
+    position: relative;
+    overflow: hidden;
+}
+  
+.vue-grid-content-grid[data-layout="all-free"] .vue-grid-content-item::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    padding-bottom: calc(var(--vue-grid-aspect-ratio) * 100%);
+}
+
+.vue-grid-content-grid[data-layout="all-free"] .vue-grid-content-item img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.vue-grid-content-grid[data-layout="all-free"] .vue-grid-content-item .vue-grid-hover-template {
+    display: none;
+}
+
+.vue-grid-content-grid[data-layout="all-free"] .vue-grid-content-item:hover .vue-grid-hover-template {
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--vue-grid-hover-background-color);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.vue-grid-content-grid[data-layout="all-free"] .vue-grid-content-item:hover .vue-grid-hover-template p {
+    display: block;
+    color: var(--vue-grid-hover-text-color);
+    font-size: var(--vue-grid-hover-text-font-size);
+}
+
+.vue-grid-content-grid[data-layout="all-free"] .vue-grid-content-item:hover .vue-grid-hover-template .vue-grid-hover-button-list {
+    display: block;
+}
